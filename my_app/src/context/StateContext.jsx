@@ -55,7 +55,7 @@ const StateContextProvider = ({children}) => {
     useEffect(() => {
         dispatch({type:"get_product", payload:productList})
         const filterProduct = productList.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
-        dispatch({type:"get_product ", payload:filterProduct})
+        dispatch({type:"get_product", payload:filterProduct})
     },[productList, search])
     
     const data = {state, search, setSearch, dispatch}
