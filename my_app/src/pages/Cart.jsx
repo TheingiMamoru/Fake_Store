@@ -22,6 +22,12 @@ const Cart = () => {
         setTotal(total - price)
     }
 
+    const checkOut = () => {
+        navigate('/success')
+        dispatch({type:"empty_cart"})
+
+    }
+
   return (
     <>
         {cart.length > 0 ? (
@@ -39,7 +45,7 @@ const Cart = () => {
                             <span className='text-2xl font-bold text-cover'>${total.toFixed(2)}</span>
                         </div>
                         <div className='flex flex-col gap-3 justify-center'>
-                            <button className='px-2 py-1 bg-button text-logo font-bold rounded-md'>Checkout</button>
+                            <button onClick={checkOut} className='px-2 py-1 bg-button text-logo font-bold rounded-md'>Checkout</button>
                             <button onClick={() => dispatch({type:"empty_cart"})} className='px-2 py-1 bg-red-600 text-cover rounded-md'>Empty Cart</button>
                         </div>
                     </div>
